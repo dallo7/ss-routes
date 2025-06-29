@@ -67,7 +67,7 @@ app.index_string = '''<!DOCTYPE html>
 
 app.title = "Fuel Transport Ledger - South Sudan"
 DB_FILE = 'fuel_transport_ledger_v7.6_final.db'
-LOGO_FILE = "logo.png" 
+LOGO_FILE = "logo.PNG"
 
 server = app.server
 
@@ -187,7 +187,7 @@ def seed_database():
 
     evidence_dir = os.path.join('assets', 'checkpoint_evidence')
     if not os.path.exists(evidence_dir): os.makedirs(evidence_dir)
-    placeholder_evidence_path = os.path.join(evidence_dir, 'placeholder_evidence.png')
+    placeholder_evidence_path = os.path.join(evidence_dir, 'placeholder_evidence.PNG')
     if not os.path.exists(placeholder_evidence_path):
         img = PILImage.new('RGB', (400, 100), color=colors.lightgrey.hexval)
         d = ImageDraw.Draw(img)
@@ -922,7 +922,7 @@ def _submit_checkpoint_to_db(data):
             evidence_dir = os.path.join('assets', 'checkpoint_evidence')
             if not os.path.exists(evidence_dir):
                 os.makedirs(evidence_dir)
-            img_filename = f"evidence_{data['plate'].upper().replace(' ', '_')}_{datetime.now().strftime('%Y%m%d%H%M%S')}.png"
+            img_filename = f"evidence_{data['plate'].upper().replace(' ', '_')}_{datetime.now().strftime('%Y%m%d%H%M%S')}.PNG"
             image_path = os.path.join(evidence_dir, img_filename)
             with open(image_path, 'wb') as f:
                 f.write(decoded)
